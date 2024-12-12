@@ -1,0 +1,502 @@
+[
+    {
+        "question": "1. What does JSON stand for?",
+        "options": [
+            "A: JavaScript Object Notation",
+            "B: JavaScript Online Notation",
+            "C: JavaScript Object Network",
+            "D: Java Syntax Object Notation"
+        ],
+        "correct": "A"
+    },
+    {
+        "question": "2. What is the primary function of an API?",
+        "options": [
+            "A: To manage the database",
+            "B: To facilitate communication between software",
+            "C: To store user data",
+            "D: To manage user authentication"
+        ],
+        "correct": "B"
+    },
+    {
+        "question": "3. What is the difference between a stack and a queue?",
+        "options": [
+            "A: A stack is FIFO, while a queue is LIFO",
+            "B: A stack is LIFO, while a queue is FIFO",
+            "C: A stack and a queue are the same",
+            "D: A stack stores data in a sorted order"
+        ],
+        "correct": "B"
+    },
+    {
+        "question": "4. Which data structure is used for depth-first search (DFS)?",
+        "options": [
+            "A: Stack",
+            "B: Queue",
+            "C: Linked List",
+            "D: Tree"
+        ],
+        "correct": "A"
+    },
+    {
+        "question": "5. Which programming language is primarily used for web development?",
+        "options": [
+            "A: Python",
+            "B: JavaScript",
+            "C: Java",
+            "D: C++"
+        ],
+        "correct": "B"
+    },
+    {
+        "question": "6. Which of the following is a relational database management system?",
+        "options": [
+            "A: MongoDB",
+            "B: MySQL",
+            "C: Redis",
+            "D: Cassandra"
+        ],
+        "correct": "B"
+    },
+    {
+        "question": "7. What does SQL stand for?",
+        "options": [
+            "A: Structured Query Language",
+            "B: Simple Query Language",
+            "C: Sequential Query Language",
+            "D: Standard Query Language"
+        ],
+        "correct": "A"
+    },
+    {
+        "question": "8. What is the time complexity of the binary search algorithm?",
+        "options": [
+            "A: O(n)",
+            "B: O(log n)",
+            "C: O(n^2)",
+            "D: O(1)"
+        ],
+        "correct": "B"
+    },
+    {
+        "question": "9. What does the '===' operator do in JavaScript?",
+        "options": [
+            "A: Checks for equality of value",
+            "B: Checks for equality of both value and type",
+            "C: Compares two objects",
+            "D: Checks if both sides are undefined"
+        ],
+        "correct": "B"
+    },
+    {
+        "question": "10. Which protocol is used for transferring web pages?",
+        "options": [
+            "A: FTP",
+            "B: HTTP",
+            "C: SMTP",
+            "D: SSH"
+        ],
+        "correct": "B"
+    },
+    {
+        "question": "11. Which sorting algorithm has the best worst-case time complexity?",
+        "options": [
+            "A: Bubble Sort",
+            "B: Merge Sort",
+            "C: Quick Sort",
+            "D: Insertion Sort"
+        ],
+        "correct": "B"
+    },
+    {
+        "question": "12. Which of the following is an example of an operating system?",
+        "options": [
+            "A: Android",
+            "B: Python",
+            "C: Chrome",
+            "D: Google"
+        ],
+        "correct": "A"
+    },
+    {
+        "question": "13. What is the primary purpose of a compiler?",
+        "options": [
+            "A: To translate high-level language to machine language",
+            "B: To execute a program",
+            "C: To debug a program",
+            "D: To store program files"
+        ],
+        "correct": "A"
+    },
+    {
+        "question": "14. What is the largest unit of data?",
+        "options": [
+            "A: Byte",
+            "B: Kilobyte",
+            "C: Megabyte",
+            "D: Terabyte"
+        ],
+        "correct": "D"
+    },
+    {
+        "question": "15. Which of these is used for version control?",
+        "options": [
+            "A: Git",
+            "B: Docker",
+            "C: Kubernetes",
+            "D: MongoDB"
+        ],
+        "correct": "A"
+    },
+    {
+        "question": "16. What is an example of a NoSQL database?",
+        "options": [
+            "A: PostgreSQL",
+            "B: MongoDB",
+            "C: Oracle",
+            "D: SQLite"
+        ],
+        "correct": "B"
+    },
+    {
+        "question": "17. Which company developed the programming language 'Java'?",
+        "options": [
+            "A: Oracle",
+            "B: Microsoft",
+            "C: Sun Microsystems",
+            "D: IBM"
+        ],
+        "correct": "C"
+    },
+    {
+        "question": "18. What does 'DOM' stand for in web development?",
+        "options": [
+            "A: Document Object Model",
+            "B: Data Object Model",
+            "C: Document Online Management",
+            "D: Dynamic Object Model"
+        ],
+        "correct": "A"
+    },
+    {
+        "question": "19. Which of the following is NOT a type of loop in JavaScript?",
+        "options": [
+            "A: for",
+            "B: while",
+            "C: do-while",
+            "D: loop-while"
+        ],
+        "correct": "D"
+    },
+    {
+        "question": "20. What is the primary function of a firewall?",
+        "options": [
+            "A: To increase internet speed",
+            "B: To block unauthorized access",
+            "C: To manage network traffic",
+            "D: To store data securely"
+        ],
+        "correct": "B"
+    },
+    {
+        "question": "21. Which of these is used for styling a webpage?",
+        "options": [
+            "A: HTML",
+            "B: CSS",
+            "C: JavaScript",
+            "D: PHP"
+        ],
+        "correct": "B"
+    },
+    {
+        "question": "22. Which is a valid syntax for declaring a variable in JavaScript?",
+        "options": [
+            "A: var x = 10;",
+            "B: variable x = 10;",
+            "C: int x = 10;",
+            "D: x := 10;"
+        ],
+        "correct": "A"
+    },
+    {
+        "question": "23. What is the use of the 'map' method in JavaScript?",
+        "options": [
+            "A: To create a new array with the results of a function",
+            "B: To filter items in an array",
+            "C: To sort an array",
+            "D: To loop through an array"
+        ],
+        "correct": "A"
+    },
+    {
+        "question": "24. What is the time complexity of the quicksort algorithm?",
+        "options": [
+            "A: O(n^2)",
+            "B: O(n log n)",
+            "C: O(n)",
+            "D: O(log n)"
+        ],
+        "correct": "B"
+    },
+    {
+        "question": "25. Which of these is a high-level programming language?",
+        "options": [
+            "A: Assembly",
+            "B: Machine Language",
+            "C: Python",
+            "D: Binary"
+        ],
+        "correct": "C"
+    },
+    {
+        "question": "26. Which tag is used to display images in HTML?",
+        "options": [
+            "A: <image>",
+            "B: <img>",
+            "C: <picture>",
+            "D: <src>"
+        ],
+        "correct": "B"
+    },
+    {
+        "question": "27. What does the 'git clone' command do?",
+        "options": [
+            "A: Initializes a new git repository",
+            "B: Downloads a repository from GitHub",
+            "C: Updates the local repository",
+            "D: Commits changes to the repository"
+        ],
+        "correct": "B"
+    },
+    {
+        "question": "28. What is the primary function of the operating system?",
+        "options": [
+            "A: To manage hardware and software resources",
+            "B: To provide internet connectivity",
+            "C: To store data",
+            "D: To execute programs"
+        ],
+        "correct": "A"
+    },
+    {
+        "question": "29. Which of these is used for creating a responsive webpage?",
+        "options": [
+            "A: Media Queries",
+            "B: jQuery",
+            "C: Python",
+            "D: AJAX"
+        ],
+        "correct": "A"
+    },
+    {
+        "question": "30. Which language is primarily used for Android app development?",
+        "options": [
+            "A: Python",
+            "B: Java",
+            "C: Swift",
+            "D: Kotlin"
+        ],
+        "correct": "B"
+    },
+    {
+        "question": "31. Which of the following is a key feature of object-oriented programming?",
+        "options": [
+            "A: Encapsulation",
+            "B: Recursion",
+            "C: Global variables",
+            "D: Iteration"
+        ],
+        "correct": "A"
+    },
+    {
+        "question": "32. Which data structure is used for breadth-first search (BFS)?",
+        "options": [
+            "A: Stack",
+            "B: Queue",
+            "C: Linked List",
+            "D: Array"
+        ],
+        "correct": "B"
+    },
+    {
+        "question": "33. Which programming language is known for its simplicity and readability?",
+        "options": [
+            "A: Python",
+            "B: Java",
+            "C: C++",
+            "D: JavaScript"
+        ],
+        "correct": "A"
+    },
+    {
+        "question": "34. What is the function of the 'git pull' command?",
+        "options": [
+            "A: Fetches and merges changes from a remote repository",
+            "B: Pushes local changes to a remote repository",
+            "C: Initializes a new repository",
+            "D: Removes files from the repository"
+        ],
+        "correct": "A"
+    },
+    {
+        "question": "35. Which of these is NOT a cloud service provider?",
+        "options": [
+            "A: AWS",
+            "B: Azure",
+            "C: Google Cloud",
+            "D: Oracle SQL"
+        ],
+        "correct": "D"
+    },
+    {
+        "question": "36. Which of the following is used for styling a webpage?",
+        "options": [
+            "A: HTML",
+            "B: CSS",
+            "C: JavaScript",
+            "D: PHP"
+        ],
+        "correct": "B"
+    },
+    {
+        "question": "37. What is the function of an index in a database?",
+        "options": [
+            "A: To sort the records",
+            "B: To enhance the speed of queries",
+            "C: To provide security to the database",
+            "D: To create backups"
+        ],
+        "correct": "B"
+    },
+    {
+        "question": "38. What does the 'window.onload' event in JavaScript do?",
+        "options": [
+            "A: It executes the code when the browser is ready to load a page",
+            "B: It executes code when an image is loaded",
+            "C: It executes code after the DOM is fully loaded",
+            "D: It executes code when the page finishes rendering"
+        ],
+        "correct": "C"
+    },
+    {
+        "question": "39. Which type of loop is used to execute code a specific number of times?",
+        "options": [
+            "A: for loop",
+            "B: while loop",
+            "C: do-while loop",
+            "D: infinite loop"
+        ],
+        "correct": "A"
+    },
+    {
+        "question": "40. What is a primary feature of the RESTful API?",
+        "options": [
+            "A: Uses XML format for data",
+            "B: Uses HTTP methods for operations",
+            "C: Requires an API key",
+            "D: Supports only GET requests"
+        ],
+        "correct": "B"
+    },
+    {
+        "question": "41. Which of these languages is primarily used for iOS app development?",
+        "options": [
+            "A: Swift",
+            "B: Kotlin",
+            "C: Java",
+            "D: C#"
+        ],
+        "correct": "A"
+    },
+    {
+        "question": "42. Which HTML tag is used to create a hyperlink?",
+        "options": [
+            "A: <link>",
+            "B: <a>",
+            "C: <href>",
+            "D: <url>"
+        ],
+        "correct": "B"
+    },
+    {
+        "question": "43. What is the primary purpose of an HTTP request?",
+        "options": [
+            "A: To fetch data from the server",
+            "B: To display the webpage",
+            "C: To store data in the database",
+            "D: To secure data communication"
+        ],
+        "correct": "A"
+    },
+    {
+        "question": "44. What does 'CRUD' stand for in database management?",
+        "options": [
+            "A: Create, Read, Update, Delete",
+            "B: Create, Read, Under, Delete",
+            "C: Call, Retrieve, Update, Delete",
+            "D: Create, Run, Update, Delete"
+        ],
+        "correct": "A"
+    },
+    {
+        "question": "45. Which of the following is a backend programming language?",
+        "options": [
+            "A: JavaScript",
+            "B: Python",
+            "C: HTML",
+            "D: CSS"
+        ],
+        "correct": "B"
+    },
+    {
+        "question": "46. What is an example of an open-source software?",
+        "options": [
+            "A: Windows",
+            "B: Linux",
+            "C: macOS",
+            "D: Microsoft Office"
+        ],
+        "correct": "B"
+    },
+    {
+        "question": "47. What is the default port for HTTP?",
+        "options": [
+            "A: 80",
+            "B: 443",
+            "C: 21",
+            "D: 8080"
+        ],
+        "correct": "A"
+    },
+    {
+        "question": "48. What is the primary function of a load balancer?",
+        "options": [
+            "A: To distribute network traffic evenly across multiple servers",
+            "B: To increase server speed",
+            "C: To store data",
+            "D: To backup servers"
+        ],
+        "correct": "A"
+    },
+    {
+        "question": "49. Which of these is used to define the structure of a webpage?",
+        "options": [
+            "A: JavaScript",
+            "B: CSS",
+            "C: HTML",
+            "D: PHP"
+        ],
+        "correct": "C"
+    },
+    {
+        "question": "50. Which type of software is a database management system?",
+        "options": [
+            "A: Web server",
+            "B: Operating system",
+            "C: Middleware",
+            "D: Management software"
+        ],
+        "correct": "C"
+    }
+]

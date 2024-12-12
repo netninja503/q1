@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Quiz Website</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            text-align: center;
+            padding: 1.5em 0;
+            font-size: 2.5em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .container {
+            max-width: 600px;
+            margin: 2em auto;
+            background: white;
+            padding: 2em;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+        .container h2 {
+            margin-bottom: 1em;
+            text-align: center;
+            color: #4CAF50;
+        }
+        input[type="text"], input[type="password"], button {
+            width: 100%;
+            padding: 1em;
+            margin: 0.5em 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1em;
+        }
+        input:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        .question {
+            margin-bottom: 2em;
+        }
+        .question h3 {
+            margin-bottom: 1em;
+            color: #555;
+        }
+        .question label {
+            display: block;
+            margin-left: 1.5em;
+            font-size: 1.1em;
+            color: #333;
+        }
+        #quiz-page, #result-page {
+            display: none;
+        }
+        .result-container p {
+            font-size: 1.2em;
+            color: #333;
+        }
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            margin-top: 2em;
+            background: #f0f4f8;
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Welcome to the Computer Science Quiz
+    </header>
+
+    <div class="container" id="login-page">
+        <h2>Login</h2>
+        <form id="login-form">
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <div class="container" id="quiz-page">
+        <h2>Computer Science Quiz</h2>
+        <div id="questions-container"></div>
+        <button id="submit-quiz">Submit Quiz</button>
+    </div>
+
+    <div class="container" id="result-page">
+        <h2>Quiz Results</h2>
+        <p id="correct-count"></p>
+        <p id="skipped-count"></p>
+        <p id="wrong-count"></p>
+    </div>
+
+    <footer>
+        &copy; 2024 CS Quiz. All rights reserved.
+    </footer>
+
+    <script>
+        const loginForm = document.getElementById('login-form');
+        const quizPage = document.getElementById('quiz-page');
+        const resultPage = document.getElementById('result-page');
+        const questionsContainer = document.getElementById('questions-container');
+
+        let username = '';
+        let correctAnswers = [];
+
+        loginForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const response = await fetch('/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Login failed');
+                }
+
+                quizPage.style.display = 'block';
+                loginForm.parentElement.style.display = 'none';
+                await fetchQuestions();
+            } catch (error) {
+                alert('Error logging in: ' + error.message);
+            }
+        });
+
+        async function fetchQuestions() {
+            try {
+                const response = await fetch('/questions');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch questions');
+                }
+
+                const questions = await response.json();
+
+                questions.forEach((question, index) => {
+                    const questionDiv = document.createElement('div');
+                    correctAnswers[index] = question.answer; // Store correct answers for result calculation
+
+                    questionDiv.classList.add('question-container');
+                    questionDiv.innerHTML = ` 
+                        <div class="question" data-correct-answer="${question.answer}">
+                            <h3>${index + 1}. ${question.question}</h3>
+                            ${question.options.map(option => `
+                                <label>
+                                    <input type="radio" name="q${index}" value="${option}">
+                                    ${option}
+                                </label>
+                            `).join('')}
+                        </div>
+                    `;
+                    questionsContainer.appendChild(questionDiv);
+                });
+            } catch (error) {
+                alert('Error fetching questions: ' + error.message);
+            }
+        }
+
+        // Function to finish quiz and submit answers
+        async function finishQuiz() {
+            const quizPage = document.getElementById('quiz-page');
+            const resultPage = document.getElementById('result-page');
+            const questions = document.querySelectorAll('.question');
+            let correct = 0, skipped = 0, wrong = 0;
+
+            // Iterate through each question to evaluate answers
+            questions.forEach((question, index) => {
+                const inputs = question.querySelectorAll('input[type="radio"]');
+                let answered = false;
+
+                // Check each radio input for the selected answer
+                inputs.forEach(input => {
+                    if (input.checked) {
+                        answered = true;
+                        const correctAnswer = question.dataset.correctAnswer; // Store the correct answer in dataset
+
+                        // Check if the selected answer matches the correct answer
+                        if (input.value === correctAnswer) {
+                            correct++;
+                        } else {
+                            wrong++;
+                        }
+                    }
+                });
+
+                // Count skipped questions (questions with no answer selected)
+                if (!answered) {
+                    skipped++;
+                }
+            });
+
+            // Display the results
+            document.getElementById('correct-count').textContent = `Correct Answers: ${correct}`;
+            document.getElementById('wrong-count').textContent = `Wrong Answers: ${wrong}`;
+            document.getElementById('skipped-count').textContent = `Skipped Questions: ${skipped}`;
+
+            // Send the results to the backend to update MongoDB
+            try {
+                const response = await fetch('/submit-quiz', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        username: username,
+                        correctAnswersCount: correct,
+                        skippedCount: skipped,
+                        wrongAnswersCount: wrong
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to submit quiz results');
+                }
+
+                // Hide the quiz page and show the results page
+                quizPage.style.display = 'none';
+                resultPage.style.display = 'block';
+            } catch (error) {
+                alert('Error submitting quiz results: ' + error.message);
+            }
+        }
+
+        // Event listener for the quiz submission
+        document.getElementById('submit-quiz').addEventListener('click', finishQuiz);
+    </script>
+</body>
+</html>
